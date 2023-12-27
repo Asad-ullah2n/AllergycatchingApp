@@ -15,7 +15,11 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "Info.plis":{
+        "NSCameraUsageDescription":"Camera Permission is needed to scan QR Codes",
+        "NSMicrophoneUsageDescription":"A message that tells the user why the app is requesting access to the device’s microphone."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -25,6 +29,14 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "expo-barcode-scanner",
+        {
+          "cameraPermission": "Allow $(PRODUCT_NAME) to access camera."
+        }
+      ]
+    ]
   }
 }
